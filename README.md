@@ -46,29 +46,33 @@ Files
 Sample look
 
 
-How many disks do you want to play with?
-3
+    How many disks do you want to play with?
+    3
 
-...Current Stacks...
-Left Stack: [3, 2, 1]
-Middle Stack: []
-Right Stack: []
+    ...Current Stacks...
+    Left Stack: [3, 2, 1]
+    Middle Stack: []
+    Right Stack: []
 
-Which stack do you want to move from?
-Enter L for Left
-Enter M for Middle
-Enter R for Right
-L
+    Which stack do you want to move from?
+    Enter L for Left
+    Enter M for Middle
+    Enter R for Right
+    L
 
-Which stack do you want to move to?
-Enter L for Left
-Enter M for Middle
-Enter R for Right
-R
+    Which stack do you want to move to?
+    Enter L for Left
+    Enter M for Middle
+    Enter R for Right
+    R
 
-Moved disk 1 from Left to Right
+    Moved disk 1 from Left to Right
 
-...Current Stacks...
-Left Stack: [3, 2]
-Middle Stack: []
-Right Stack: [1]
+    ...Current Stacks...
+    Left Stack: [3, 2]
+    Middle Stack: []
+    Right Stack: [1]
+    
+Bonus
+change the winning messages.
+
