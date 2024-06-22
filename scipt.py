@@ -56,7 +56,7 @@ while right_stack.get_size() != num_disks:
     if from_stack.is_empty():
       print("\n\nInvalid Move. Try Again")
 
-    elif to_stack.is_empty or from_stack.peek() < to_stack.peek():
+    elif to_stack.is_empty() or from_stack.peek() < to_stack.peek():
       disk = from_stack.pop()
       to_stack.push(disk)
       num_user_moves += 1
@@ -68,3 +68,5 @@ if num_user_moves <= num_optimal_moves:
   print("\nCONGRATS!!!\nYou completed the game in {0} moves, and the optimal number of moves is {1}".format(num_user_moves, num_optimal_moves));
 else:
   print("\nwomp womp~~~\nYou completed the game in {0} moves, but the optimal number of moves is {1}, so you didnt quite make it. :(".format(num_user_moves, num_optimal_moves));
+for i in stacks:
+    i.print_items()
