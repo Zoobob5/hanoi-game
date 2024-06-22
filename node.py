@@ -1,56 +1,52 @@
-# Node class
 class Node:
+    def __init__(self, value=None):
+        self.value = value
+        self.next_node = None
 
-	# Function to initialize the
-	# node object
-	def __init__(self, data):
+    def get_value(self):
+        return self.value
 
-		# Assign data
-		self.data = data
+    def set_value(self, value):
+        self.value = value
 
-		# Initialize next as null
-		self.next = None
+    def get_next_node(self):
+        return self.next_node
 
-# Linked List class
+    def set_next_node(self, next_node):
+        self.next_node = next_node
+
+
 class LinkedList:
+    def __init__(self):
+        self.head = None
+        self.size = 0
 
-	# Function to initialize the
-	# Linked List object
-	def __init__(self):
-		self.head = None
+    def add(self, value):
+        new_node = Node(value)
+        new_node.set_next_node(self.head)
+        self.head = new_node
+        self.size += 1
 
-# This function is in LinkedList class
-# Function to insert a new node at
-# the beginning
-    def push(self, new_data):
+    def remove(self):
+        if self.head:
+            value = self.head.get_value()
+            self.head = self.head.get_next_node()
+            self.size -= 1
+            return value
+        else:
+            print("Linked list is empty.")
 
-	# 1 & 2: Allocate the Node &
-	#	 Put in the data
-	    new_node = Node(new_data)
+    def is_empty(self):
+        return self.size == 0
 
-	# 3. Make next of new Node as head
-	    new_node.next = self.head
+    def get_size(self):
+        return self.size
 
-	# 4. Move the head to point to new Node
-	    self.head = new_node
-
-    # This function is in LinkedList class.
-# Inserts a new node after the given
-# prev_node. This method is defined
-# inside LinkedList class shown above
-    def insertAfter(self, prev_node, new_data):
-
-	# 1. Check if the given prev_node exists
-	    if prev_node is None:
-		print ("The given previous node must in LinkedList.")
-		return
-
-	# 2. Create new node &
-	# 3. Put in the data
-	    new_node = Node(new_data)
-
-	# 4. Make next of new Node as next of prev_node
-	    new_node.next = prev_node.next
-
-	# 5. make next of prev_node as new_node
-	    prev_node.next = new_node
+    def print_list(self):
+        current = self.head
+        print_list = []
+        while current:
+            print_list.append(current.get_value())
+            current = current.get_next_node()
+        print_list.reverse()
+        print("Linked List:", print_list)
