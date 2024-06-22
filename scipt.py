@@ -37,3 +37,34 @@ def get_input():
           return stacks[i]
 
 #Play the Game
+num_user_moves = 0;
+
+while right_stack.get_size() != num_disks:
+  print("\n\n\n...Current Stacks...")
+  for i in stacks:
+    i.print_items()
+
+  while True:
+    print("\nWhich stack do you want to move from?\n")
+
+    from_stack = get_input()
+
+    print("\nWhich stack do you want to move to?\n")
+
+    to_stack = get_input()
+
+    if from_stack.is_empty():
+      print("\n\nInvalid Move. Try Again")
+
+    elif to_stack.is_empty or from_stack.peek() < to_stack.peek():
+      disk = from_stack.pop()
+      to_stack.push(disk)
+      num_user_moves += 1
+      break;
+
+    else:
+      print("\n\nInvalid Move. Try Again")
+if num_user_moves <= num_optimal_moves:
+  print("\nCONGRATS!!!\nYou completed the game in {0} moves, and the optimal number of moves is {1}".format(num_user_moves, num_optimal_moves));
+else:
+  print("\nwomp womp~~~\nYou completed the game in {0} moves, but the optimal number of moves is {1}, so you didnt quite make it. :(".format(num_user_moves, num_optimal_moves));
